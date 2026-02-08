@@ -1,0 +1,42 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    min-width: 100vh;
+    background-color: hsl(60, 100%, 87%);
+    display: flex;
+    justify-content: center;
+    font-family: 'Courier New', Courier, monospace;
+ 
+}
+#to-do{
+    display: flex;
+    flex-direction: column;
+    background-color: hsl(187, 100%, 87%);
+    align-items: center;
+    width: 40%;
+    min-height: 80vh;
+    border-radius: 20px;
+    margin-top: 20px;
+    padding: 5px;
+}
+
+#newTask{
+    padding: 1px;
+}
+
+#addBtn{
+  padding: 3px;
+  background-color: hsl(60, 100%, 87%);
+  border: none;
+  border-radius: 5px;
+  color: hsl(187, 100%, 47%);
+  cursor: pointer;
+}
+li{
+    text-decoration: none;
+    list-style: none;
+    padding-left: 20px;
+}
