@@ -18,19 +18,29 @@ function renderToDo(){
 
     todo.forEach(item => {
         const li = document.createElement("li");
-        li.className = "Todo-item";
+        li.className = "Todo-item" + (item.completed ? " completed" : "");
         li.innerHTML = `
-        <span class ="Todo-text">${item.title}</span>
-        <div class = "Todo-actions">
-        <button class ="edit">edit</button>
-        <button class ="delete">delete</button>
+        <input type="checkbox" class="todo-checkbox" ${item.completed ? "checked" : ""}>
+        <span class="Todo-text">${item.title}</span>
+        <div class="Todo-actions">
+        <button class="edit">edit</button>
+        <button class="delete">delete</button>
         </div>`;
+
+        li.querySelector(".todo-checkbox").onclick = function(){
+            item.completed = this.checked;
+            renderToDo();
+        };
 
         li.querySelector(".edit").onclick = function(){
             const newTitle = prompt("change task", item.title);
             if(newTitle){
                 updateTodo(item.id, newTitle);
             }
+        };
+
+        li.querySelector(".delete").onclick = function(){
+            deleteTodo(item.id);
         };
 
         list.appendChild(li);
@@ -43,6 +53,11 @@ function updateTodo(id, newTitle){
         todoItem.title = newTitle;
         renderToDo();
     }
+}
+
+function deleteTodo(id){
+    todo = todo.filter(t => t.id !== id);
+    renderToDo();
 }
 
 addBtn.onclick = function(){

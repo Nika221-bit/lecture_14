@@ -39,5 +39,45 @@ li{
     text-decoration: none;
     list-style: none;
     padding-left: 20px;
-    
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 20px;
+    margin: 5px 0;
+    background-color: white;
+    border-radius: 5px;
+    width: 90%;
+}
+
+li.completed .Todo-text{
+    text-decoration: line-through;
+    opacity: 0.6;
+}
+
+.todo-checkbox{
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+
+.Todo-text{
+    flex-grow: 1;
+}
+
+.Todo-actions{
+    display: flex;
+    gap: 5px;
+}
+
+.Todo-actions button{
+    padding: 5px 10px;
+    background-color: hsl(187, 100%, 47%);
+    color: white;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.Todo-actions button:hover{
+    background-color: hsl(187, 100%, 40%);
 }
